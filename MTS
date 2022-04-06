@@ -1,0 +1,73 @@
+QUESTION 2
+app.component.html
+<h3 style="text-align:center">MULTIPLE COMPONENTS</h3>
+<div>
+    <app-usa></app-usa>
+</div>
+usa.component.html
+<div class="container" style="color:white;background-color:black;height:500px">
+    <div class="class1">
+        <h3 style="text-align:center">UNITED STATES</h3>
+    </div>
+    <div id="b" style="color:blue;background-color:yellow;height:400px;width:350px;margin-left:40px">
+        <div>
+            <app-newyork></app-newyork>
+        </div>
+    </div>
+    <div id="a" style="color:rgb(177, 177, 186);background-color:yellow;margin-left:500px;padding-bottom:100px">
+        <div>
+            <app-wasington></app-wasington>
+        </div>
+    </div>
+</div>
+usa.component.css
+#a {
+    float: right;
+    margin-right: 30px;
+    height: 400px;
+    width: 350px;
+}
+
+#b {
+    float: left;
+}
+newyork.component.html
+<div class="class1">
+    <h3 style="text-align:center">IAM NEWYORK</h3>
+</div>
+washington.component.html
+
+<div class="class1">
+    <h3 style="text-align:center">IAM WASHINGTON</h3>
+</div>
+QUESTION 1
+app.component.html
+<div class="panel panel-default" style="width:900px">
+    <div class="panel-body">
+        <div class="card" style="margin-left:400px; margin-top:50px">
+            <img [src]="imageLocation" width="100%" height="50%" style="padding:15px">
+            <div class="card-body">
+                <h4>Category : {{productTitle}}</h4>
+                <h4>Price : {{productPrice | currency:"INR"}}</h4>
+                <h4>Stock : {{stock}}</h4>
+            </div>
+            <button type="button" style="background-color:blue;color:black;width:150px;height:40px;margin-left:180px;margin-bottom:20px">ADD TO CART</button>
+        </div>
+    </div>
+</div>
+app.component.ts
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'MOBILES';
+  productTitle:string="OPPO";
+  productPrice:number=30000;
+  stock:number=1;
+  imageLocation:string='../assets/mobile1.jfif';
+}
